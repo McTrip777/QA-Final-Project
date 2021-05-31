@@ -11,7 +11,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.ims.persistence.domain.Customer;
 import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.DBUtils;
 
@@ -23,7 +22,8 @@ public class ItemDAO implements Dao<Item>{
 	public Item modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
 		String name = resultSet.getString("name");
-		return new Item(id, name);
+		double cost = resultSet.getDouble("cost");
+		return new Item(id, name, cost);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class ItemDAO implements Dao<Item>{
 	@Override
 	public Item read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM customers WHERE id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM items WHERE id = ?");) {
 				statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
@@ -65,8 +65,9 @@ public class ItemDAO implements Dao<Item>{
 	public Item create(Item t) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO items(name) VALUES (?)");) {
+						.prepareStatement("INSERT INTO items(name, cost) VALUES (?, ?)");) {
 			statement.setString(1, t.getName());
+			statement.setDouble(2, t.getCost());
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) {
@@ -80,7 +81,7 @@ public class ItemDAO implements Dao<Item>{
 	public Item update(Item t) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE customers SET name = ? WHERE id = ?");) {
+						.prepareStatement("UPDATE items SET name = ? WHERE id = ?");) {
 			statement.setString(1, t.getName());
 			statement.setLong(2, t.getId());
 			statement.executeUpdate();
