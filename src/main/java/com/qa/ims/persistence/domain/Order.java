@@ -5,17 +5,17 @@ import java.util.*;
 public class Order {
 	private Long id;
 	private Long customer_id;
-	private List<Item> itemList = new ArrayList<>();
+	private static List<Item> itemList;
 	
-	public Order(Long customer_id, List<Item> itemList) {
+	public Order(Long customer_id,List<Item> itemList) {
 		this.setCustomer_id(customer_id);
-		this.setItemList(itemList);
+		this.itemList = new ArrayList<>();
 	}
 	
 	public Order(Long id, Long customer_id, List<Item> itemList) {
 		this.setId(id);
 		this.setCustomer_id(customer_id);
-		this.setItemList(itemList);
+		this.itemList = new ArrayList<>();
 	}
 
 	public Long getId() {
