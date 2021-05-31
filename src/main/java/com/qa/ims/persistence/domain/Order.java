@@ -43,6 +43,11 @@ public class Order {
 	}
 
 	@Override
+	public String toString() {
+		return "Order [id=" + id + ", customer_id=" + customer_id + ", itemList=" + itemList + "]";
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
