@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface Dao<T> {
+	
+	T modelFromResultSet(ResultSet resultSet) throws SQLException;
 
 	List<T> readAll();
 	
@@ -15,6 +17,4 @@ public interface Dao<T> {
 	T update(T t);
 
 	int delete(long id);
-
-	T modelFromResultSet(ResultSet resultSet) throws SQLException;
 }
