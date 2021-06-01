@@ -5,7 +5,7 @@ import java.util.*;
 public class Order {
 	private Long id;
 	private Long customer_id;
-	private static List<Item> itemList;
+	private List<Item> itemList;
 	
 	public Order(Long customer_id,List<Item> itemList) {
 		this.setCustomer_id(customer_id);

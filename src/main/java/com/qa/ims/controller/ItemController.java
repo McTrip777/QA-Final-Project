@@ -26,7 +26,7 @@ public class ItemController implements CrudController<Item>{
 	public List<Item> readAll() {
 		List<Item> items = itemDAO.readAll();
 		for (Item item : items) {
-			LOGGER.info(items);
+			LOGGER.info(item);
 		}
 		return items;
 	}
@@ -35,6 +35,7 @@ public class ItemController implements CrudController<Item>{
 	public Item create() {
 		LOGGER.info("Please enter the name of the item");
 		String name = utils.getString();
+		LOGGER.info("Please enter the cost of the item");
 		double cost = utils.getDouble();
 		Item item = itemDAO.create(new Item(name, cost));
 		LOGGER.info("Item created");
