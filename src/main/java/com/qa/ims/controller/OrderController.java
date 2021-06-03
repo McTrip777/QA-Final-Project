@@ -22,7 +22,7 @@ public class OrderController implements CrudController<Order>{
 		this.utils = utils;
 	}
 
-	@Override
+//	@Override
 	public List<Order> readAll() {
 		List<Order> orders = orderDao.readAll();
 		for (Order order : orders) {
@@ -69,9 +69,12 @@ public class OrderController implements CrudController<Order>{
 		return order;
 	}
 	
-//	public Order readById(Long id) {
-//		
-//		return order;
+//	public List<Order> itemOrderToString() {
+//		List<Order> orders = orderDao.orderItemQuery();
+//		for (Order order : orders) {
+//			LOGGER.info(order);
+//		}
+//		return orders;
 //	}
 
 	@Override

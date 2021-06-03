@@ -25,24 +25,51 @@ public class OrderDAO implements Dao<Order>{
 		Long customer_id = resultSet.getLong("customer_id");
 		return new Order(id, customer_id);
 	}
-
-	@Override
-	public List<Order> readAll() {
-		try(Connection conn = DBUtils.getInstance().getConnection(); 
-				Statement sm = conn.createStatement();
-				ResultSet rs = sm.executeQuery("SELECT * FROM orders");){
-			List<Order> orders = new ArrayList<>();
-			while(rs.next()) {
-				orders.add(modelFromResultSet(rs));
-			}
-			return orders;
-		}catch(SQLException e) {
-			LOGGER.debug(e);
-			LOGGER.error(e.getMessage());
-		}
-		return new ArrayList<>();
+	
+	public String modelFromResult(ResultSet resultSet) throws SQLException {
+		Long id = resultSet.getLong("item_id");
+		Long customer_id = resultSet.getLong("customer_id");
+		String itemName = resultSet.getString("name");
+		String itemCost = resultSet.getString("cost");
+		return "ItemId: " + id + " CustomerId: " + customer_id + " Name: " + itemName + " Cost: " + itemCost;
 	}
 
+	@Override
+//	public List<Order> readAll() {
+//		try(Connection conn = DBUtils.getInstance().getConnection(); 
+//				Statement sm = conn.createStatement();
+////				ResultSet rs = sm.executeQuery("SELECT * FROM orders");
+//				ResultSet rs2 = sm.executeQuery("SELECT oi.item_id, oi.order_id, i.name, i.cost, o.customer_id "
+//						+ "FROM orders AS o, orders_items AS oi, items AS i "
+//						+ "WHERE o.id = oi.order_id AND i.id = oi.item_id");){
+//			List<Order> orders = new ArrayList<>();
+//			while(rs2.next()) {
+//				orders.add(modelFromResult(rs2));
+//			}
+//			return orders;
+//		}catch(SQLException e) {
+//			LOGGER.debug(e);
+//			LOGGER.error(e.getMessage());
+//		}
+//		return new ArrayList<>();
+//	}
+	public List<Order> readAll() {
+		String str = "";
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				Statement statement = connection.createStatement();
+				ResultSet resultSet = statement
+						.executeQuery("SELECT * FROM orders");) {
+			List<Order> orders = new ArrayList<>();
+			while(resultSet.next()) {
+				orders.add(modelFromResultSet(resultSet));
+			}
+			return orders;
+			}catch (Exception e) {
+				LOGGER.debug(e);
+				LOGGER.error(e.getMessage());
+			}
+		return null;
+	}
 	@Override
 	public Order read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
