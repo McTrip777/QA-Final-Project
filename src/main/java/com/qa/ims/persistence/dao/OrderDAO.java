@@ -102,7 +102,11 @@ public class OrderDAO implements Dao<Order>{
 	
 	public int deleteItem(Long item_id, Long order_id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM orders_items WHERE order_id = ? AND item_id = ?");) {
+				PreparedStatement statement = connection.prepareStatement(
+						"DELETE FROM orders_items "
+						+ "WHERE order_id = ? AND item_id = ? "
+//						+ "ORDER BY id DESC "
+						+ "LIMIT 1");) {
 			statement.setLong(1, order_id);
 			statement.setLong(2, item_id);
 			return statement.executeUpdate();
