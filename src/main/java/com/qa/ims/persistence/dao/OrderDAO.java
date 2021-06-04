@@ -54,7 +54,6 @@ public class OrderDAO implements Dao<Order>{
 //		return new ArrayList<>();
 //	}
 	public List<Order> readAll() {
-		String str = "";
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement

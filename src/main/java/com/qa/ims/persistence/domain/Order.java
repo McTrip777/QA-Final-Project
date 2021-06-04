@@ -1,7 +1,5 @@
 package com.qa.ims.persistence.domain;
 
-import java.util.*;
-
 public class Order {
 	private Long id;
 	private Long customer_id;
