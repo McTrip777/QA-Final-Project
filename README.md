@@ -29,6 +29,9 @@ This application has Mockito and JUnit dependancies installed.
     <scope>test</scope>
 </dependency>
 ```
+### ERD
+<img width="708" alt="ERD 3" src="https://user-images.githubusercontent.com/44535342/120836389-c0d9ef00-c522-11eb-803c-0f88e3de6db3.png">
+
 ### UML
 ![UML 2](https://user-images.githubusercontent.com/44535342/120836291-a4d64d80-c522-11eb-86ed-9555faed4848.png)
 
