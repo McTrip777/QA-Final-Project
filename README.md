@@ -1,79 +1,48 @@
-Coverage: 34%
 # Project Title
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Inventory Management System (IMS) run in the Command Line Interface (CLI) providing the ability to perform create, read, update and delete methods (CRUD), on customers, orders and items. 
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+This application has Mockito and JUnit dependancies installed.
+
+```<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.7.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>3.10.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <version>3.10.0</version>
+    <scope>test</scope>
+</dependency>```
 
 ### Unit Tests 
 
 Explain what these tests test, why and how to run them
 
 ```
-Give an example
+Testing the Customer, Order and Item classes and all methods contained. 
+Ensuring every result returned is accurate and anticipated.
 ```
-
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning.
-
 ## Authors
-
+* **Jacob McFaul**
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 
 ## License
