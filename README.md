@@ -30,11 +30,10 @@ This application has Mockito and JUnit dependancies installed.
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
-
-```
 Testing the Customer, Order and Item classes and all methods contained. 
 Ensuring every result returned is accurate and anticipated.
+
+```
 ```
 
 ## Built With
