@@ -43,7 +43,7 @@ Ensuring every result returned is accurate and anticipated.
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 
 ## Presentation
-*https://docs.google.com/presentation/d/1Lu2ihsfxvxX1yzIrHd1_X_czjIJSZmfGxDD-mOWVE1k/edit#slide=id.gcb9a0b074_1_140
+* https://docs.google.com/presentation/d/1Lu2ihsfxvxX1yzIrHd1_X_czjIJSZmfGxDD-mOWVE1k/edit#slide=id.gcb9a0b074_1_140
 
 ## License
 
