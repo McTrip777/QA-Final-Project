@@ -32,5 +32,6 @@ DROP TABLE IF EXISTS `items`;
 CREATE TABLE IF NOT EXISTS `items` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(40) DEFAULT NULL,
+    `cost` double DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
