@@ -6,7 +6,8 @@ Inventory Management System (IMS) run in the Command Line Interface (CLI) provid
 
 This application has Mockito and JUnit dependancies installed.
 
-```<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+```
+<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>
@@ -26,15 +27,12 @@ This application has Mockito and JUnit dependancies installed.
     <artifactId>mockito-junit-jupiter</artifactId>
     <version>3.10.0</version>
     <scope>test</scope>
-</dependency>```
-
+</dependency>
+```
 ### Unit Tests 
 
 Testing the Customer, Order and Item classes and all methods contained. 
 Ensuring every result returned is accurate and anticipated.
-
-```
-```
 
 ## Built With
 
