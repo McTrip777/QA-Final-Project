@@ -29,6 +29,9 @@ This application has Mockito and JUnit dependancies installed.
     <scope>test</scope>
 </dependency>
 ```
+### UML
+![UML 2](https://user-images.githubusercontent.com/44535342/120836291-a4d64d80-c522-11eb-86ed-9555faed4848.png)
+
 ### Unit Tests 
 
 Testing the Customer, Order and Item classes and all methods contained. 
