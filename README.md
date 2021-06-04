@@ -29,6 +29,9 @@ This application has Mockito and JUnit dependancies installed.
     <scope>test</scope>
 </dependency>
 ```
+### Jar Snapshot
+```java -jar ims-0.0.1-jar-with-dependencies.jar```
+
 ### ERD
 <img width="708" alt="ERD 3" src="https://user-images.githubusercontent.com/44535342/120836389-c0d9ef00-c522-11eb-803c-0f88e3de6db3.png">
 
